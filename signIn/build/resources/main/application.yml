@@ -1,0 +1,19 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_URL:localhost}:3306/${DB_NAME:test}?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&tinyInt1isBit=false&rewriteBatchedStatements=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:a1b2c3!!}
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL:create}
+    properties.hibernate:
+      format_sql: true
+      show_sql: ${SHOW_SQL:true}
+      jdbc:
+        batch_size: 200
+    open-in-view: false
+    properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQLDialect
